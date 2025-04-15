@@ -196,5 +196,6 @@ $consulta_cliente = mysqli_query($conexao, $query);
     ?>
     </tbody>
 </table>
+
 </body>
 </html>
