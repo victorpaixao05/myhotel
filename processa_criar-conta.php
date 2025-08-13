@@ -1,9 +1,5 @@
 <?php
-// Configurações do banco
-$servidor = "localhost";
-$usuario = "root";
-$senha = "";
-$db = "myhotel";
+include 'db.php'; 
 
 try {
     $pdo = new PDO("mysql:host=$servidor;dbname=$db;charset=utf8mb4", $usuario, $senha);

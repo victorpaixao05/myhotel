@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 27/05/2025 às 04:00
+-- Tempo de geração: 13/08/2025 às 02:46
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -20,6 +20,24 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `myhotel`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `hoteis`
+--
+
+CREATE TABLE `hoteis` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(255) NOT NULL,
+  `data_nascimento` date NOT NULL,
+  `documento` varchar(20) NOT NULL,
+  `nome_hotel` varchar(255) NOT NULL,
+  `local_hotel` varchar(255) NOT NULL,
+  `preco_hotel` decimal(10,2) NOT NULL,
+  `descricao` text NOT NULL,
+  `imagem` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -45,6 +63,12 @@ INSERT INTO `login` (`id_login`, `email_login`, `senha`) VALUES
 --
 
 --
+-- Índices de tabela `hoteis`
+--
+ALTER TABLE `hoteis`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Índices de tabela `login`
 --
 ALTER TABLE `login`
@@ -53,6 +77,12 @@ ALTER TABLE `login`
 --
 -- AUTO_INCREMENT para tabelas despejadas
 --
+
+--
+-- AUTO_INCREMENT de tabela `hoteis`
+--
+ALTER TABLE `hoteis`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `login`

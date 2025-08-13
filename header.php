@@ -11,6 +11,7 @@
 
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                 <li><a href="?pagina=cadastro" class="nav-link px-2 text-black">Registrar hotel</a></li>
+                <li><a href="?pagina=meushoteis" class="nav-link px-2 text-black">Meus hotéis</a></li>
                 <li><a href="#" class="nav-link px-2 text-black">Sobre nós</a></li>
                 <li><a href="#" class="nav-link px-2 text-black">Suporte</a></li>
                 <li><a href="#" class="nav-link px-2 text-black">Favoritos</a></li>

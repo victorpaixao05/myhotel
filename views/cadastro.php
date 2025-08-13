@@ -4,9 +4,7 @@ if (!isset($_SESSION['usuario'])) {
     header("Location: index.php?pagina=login&erro=2");
     exit;
 }
-
 ?>
-
 
 <link rel="stylesheet" href="<?= BASE_URL ?>styles/style.css">
 
@@ -17,7 +15,7 @@ if (!isset($_SESSION['usuario'])) {
 <div class="cadastro-container">
   <div class="cadastro-form-section">
 
-    <form id="form-cadastro" onsubmit="mostrarMensagem(event)" method="POST">
+    <form id="form-cadastro" method="POST" action="processa_cadastro.php" enctype="multipart/form-data">
       <div class="cadastro-grid-form">
         <div class="cadastro-form-group">
           <label for="nome">Digite seu Nome:</label>
@@ -50,7 +48,7 @@ if (!isset($_SESSION['usuario'])) {
         </div>
 
         <div class="cadastro-form-group">
-          <label for="preco_hotel">Digite a descrição do hotel</label>
+          <label for="descricao_hotel">Digite a descrição do hotel</label>
           <input type="text" id="descricao_hotel" name="descricao_hotel" required>
         </div>
 
@@ -66,24 +64,12 @@ if (!isset($_SESSION['usuario'])) {
         <input type="file" id="upload-foto" name="foto_hotel[]" multiple accept="image/*">
         <span id="file-chosen">Nenhum arquivo escolhido</span>
     </div>
-    </div>
+  </div>
 </div>
 
 <script>
-
-  function mostrarMensagem(event) {
-    event.preventDefault();
-    document.getElementById("mensagem-sucesso").style.display = "block";
-
-     document.getElementById("form-cadastro").reset();
-
-    setTimeout(() => {
-      document.getElementById("mensagem-sucesso").style.display = "none";
-    }, 5000);
-  }
   const uploadInput = document.getElementById("upload-foto");
   const fileChosen = document.getElementById("file-chosen");
-
 
   uploadInput.addEventListener("change", function () {
     if (uploadInput.files.length > 0) {
@@ -94,4 +80,3 @@ if (!isset($_SESSION['usuario'])) {
     }
   });
 </script>
-

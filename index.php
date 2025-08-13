@@ -25,6 +25,7 @@ switch ($pagina) {
 	case 'login':
 	case 'cadastro':
 	case 'criar-conta':
+	case 'meushoteis':
 		include "views/$pagina.php";
 		break;
 	default: include 'views/home.php'; 

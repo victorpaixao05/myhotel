@@ -292,5 +292,22 @@ body {
   font-weight: bold;
 }
 
+.lista-hoteis {
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.hotel-card {
+    background: #f5f5f5;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.hotel-card img {
+    display: block;
+    margin-top: 10px;
+    border-radius: 5px;
+}
 
 
