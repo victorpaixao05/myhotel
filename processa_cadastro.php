@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include 'db.php'; 
+include 'db.php';
 
 if (!isset($_SESSION['usuario'])) {
     header("Location: index.php?pagina=login&erro=2");
@@ -47,11 +47,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     if (mysqli_query($conexao, $sql)) {
-        header("Location: index.php?pagina=meushoteis");
-        exit;
+        echo "<p style='color: green; font-weight: bold;'>✅ Hotel cadastrado com sucesso! Redirecionando...</p>";
+        echo "<script>
+                setTimeout(function() {
+                    window.location.href = 'index.php?pagina=meushoteis';
+                }, 2000); // 2000ms = 2 segundos
+              </script>";
     } else {
-        die("Erro ao inserir no banco: " . mysqli_error($conexao));
+        echo "<p style='color: red;'>❌ Erro ao inserir no banco de dados: " . mysqli_error($conexao) . "</p>";
     }
 } else {
-    die("Método inválido");
+    echo "<p style='color: red;'>❌ Método inválido. Use POST.</p>";
 }
+?>

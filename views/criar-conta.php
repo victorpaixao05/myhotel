@@ -16,6 +16,13 @@
 
       <button type="submit">Cadastrar</button>
     </form>
+    <br>
+<?php if (isset($_GET['sucesso'])){ ?>
+	<div class="alert" role="alert">
+		Usuário cadastrado com sucesso!
+	</div>
+<?php } ?>
 
     <a href="?pagina=login" class="back-link">Já tem conta? Faça login</a>
+
   </div>

@@ -12,6 +12,8 @@ if (!isset($_SESSION['usuario'])) {
   Hotel cadastrado com sucesso!
 </div>
 
+
+
 <div class="cadastro-container">
   <div class="cadastro-form-section">
 
