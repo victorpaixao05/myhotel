@@ -1,37 +1,31 @@
 <?php 
-
-#iniciar sessão
 session_start();
 
 define('BASE_URL', '/testar/');
 
-#Base de dados
+# Base de dados
 include 'db.php';
 
-#Cabeçalho
+# Cabeçalho
 include 'header.php';
 
-
-#Conteúdo da página
-
-if(isset($_GET['pagina'])) {
-	$pagina = $_GET['pagina'];
-} else {
-	$pagina = 'home';
-}
-
+# Conteúdo da página
+$pagina = $_GET['pagina'] ?? 'home';
 
 switch ($pagina) {
-	case 'login':
-	case 'cadastro':
-	case 'criar-conta':
-	case 'meushoteis':
-		include "views/$pagina.php";
-		break;
-	default: include 'views/home.php'; 
-	break;
+    case 'login':
+    case 'cadastro':
+    case 'criar-conta':
+    case 'meushoteis':
+    case 'editar_hotel':
+        include "views/$pagina.php";
+        break;
+
+    default:
+        include 'views/home.php'; 
+        break;
 }
 
-
-#Rodapé
+# Rodapé
 include 'footer.php';
+?>

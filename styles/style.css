@@ -319,3 +319,32 @@ body {
 }
 
 
+.acoes-card {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+.btn-editar, .btn-deletar {
+    padding: 8px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.btn-editar {
+    background-color: #6c63ff;
+}
+
+.btn-editar:hover {
+    background-color: #5751d9;
+}
+
+.btn-deletar {
+    background-color: #ff4d4f;
+}
+
+.btn-deletar:hover {
+    background-color: #cc3b3b;
+}

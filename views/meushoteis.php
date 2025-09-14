@@ -1,5 +1,6 @@
 <?php
 
+
 if (!isset($_SESSION['usuario'])) {
     header("Location: index.php?pagina=login&erro=2");
     exit;
@@ -46,8 +47,13 @@ $hoteis = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <?php if ($hotel['imagem']): ?>
                     <img src="uploads/<?= htmlspecialchars($hotel['imagem']) ?>" alt="Foto do hotel" style="max-width:300px;">
                 <?php endif; ?>
+
+                <div class="acoes-card">
+                    <a class="btn-editar" href="?pagina=editar_hotel&id=<?= $hotel['id'] ?>">Editar</a>
+                    <a class="btn-deletar" href="processa_deleta_hotel.php?id=<?= $hotel['id'] ?>" onclick="return confirm('Deseja realmente excluir este hotel?')">Deletar</a>
+                </div>
             </div>
-            <hr>
         <?php endforeach; ?>
     <?php endif; ?>
 </div>
+
